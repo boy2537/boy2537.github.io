@@ -1,184 +1,423 @@
-<!DOCTYPE HTML>
-<!--
-	Stellar by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Stellar by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!doctype html>
+<html lang="th">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="description" content="ผลงานและบริการด้านพัฒนาเว็บและวิเคราะห์ข้อมูลสุขภาพ — Aphisit">
+	<meta name="theme-color" content="#6C5CE7">
+	<meta property="og:title" content="Aphisit — Web & Healthcare Data Developer">
+	<meta property="og:description" content="นักพัฒนาเว็บและวิเคราะห์ข้อมูลทางการแพทย์ — รับพัฒนาเว็บ, วิเคราะห์ข้อมูลคนไข้, และระบบสุขภาพ">
+	<title>Aphisit — พอร์ตโฟลิโอ</title>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<span class="logo"><img src="images/logo.svg" alt="" /></span>
-						<h1>Stellar</h1>
-						<p>Just another free, fully responsive site template<br />
-						built by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</header>
+	<style>
+		:root{
+			--primary:#6C5CE7;
+			--accent:#00D1B2;
+			--bg:#0F1226;
+			--surface:rgba(255,255,255,0.06);
+			--text:#E9ECF1;
+			--muted:rgba(233,236,241,0.7);
+			--glass-blur:8px;
+			--max-w:1160px;
+			--radius:18px;
+			--gap:18px;
+			--card-pad:20px;
+		}
+		[data-theme='light']{
+			--bg:#FFFFFF;
+			--surface:#F7F8FC;
+			--text:#1C2230;
+			--muted:rgba(28,34,48,0.65);
+		}
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li><a href="#intro" class="active">Introduction</a></li>
-							<li><a href="#first">First Section</a></li>
-							<li><a href="#second">Second Section</a></li>
-							<li><a href="#cta">Get Started</a></li>
-						</ul>
-					</nav>
+		/* Reset & base */
+		*{box-sizing:border-box}
+		html{scroll-behavior:smooth}
+		body{font-family:'Noto Sans Thai',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;margin:0;-webkit-font-smoothing:antialiased}
+		a{color:var(--primary);text-decoration:none}
 
-				<!-- Main -->
-					<div id="main">
+		/* Layout */
+		.site-header{position:fixed;inset:0 0 auto 0;height:68px;display:flex;align-items:center;backdrop-filter:blur(var(--glass-blur));background:linear-gradient(180deg,rgba(0,0,0,0.15),transparent);z-index:60;padding:0 20px}
+		[data-theme='light'] .site-header{background:rgba(255,255,255,0.6)}
+		.container{max-width:var(--max-w);margin:0 auto;width:100%;padding:0 20px}
+		.nav{display:flex;align-items:center;justify-content:space-between;width:100%}
+		.brand{font-family:'Poppins',sans-serif;font-weight:700;letter-spacing:-0.5px;display:flex;align-items:center;gap:12px}
+		.brand .dot{width:10px;height:10px;background:var(--accent);border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,0.2)}
 
-						<!-- Introduction -->
-							<section id="intro" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>Ipsum sed adipiscing</h2>
-										</header>
-										<p>Sed lorem ipsum dolor sit amet nullam consequat feugiat consequat magna
-										adipiscing magna etiam amet veroeros. Lorem ipsum dolor tempus sit cursus.
-										Tempus nisl et nullam lorem ipsum dolor sit amet aliquam.</p>
-										<ul class="actions">
-											<li><a href="generic.html" class="button">Learn More</a></li>
-										</ul>
-									</div>
-									<span class="image"><img src="images/pic01.jpg" alt="" /></span>
-								</div>
-							</section>
+		/* nav links */
+		nav ul{display:flex;gap:14px;align-items:center;margin:0;padding:0;list-style:none}
+		.nav-links a{padding:10px 12px;border-radius:10px;color:var(--muted);font-weight:600}
+		.nav-links a.active{background:var(--surface);color:var(--text);box-shadow:0 6px 18px rgba(12,12,20,0.6)}
 
-						<!-- First Section -->
-							<section id="first" class="main special">
-								<header class="major">
-									<h2>Magna veroeros</h2>
-								</header>
-								<ul class="features">
-									<li>
-										<span class="icon solid major style1 fa-code"></span>
-										<h3>Ipsum consequat</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
-									</li>
-									<li>
-										<span class="icon major style3 fa-copy"></span>
-										<h3>Amed sed feugiat</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
-									</li>
-									<li>
-										<span class="icon major style5 fa-gem"></span>
-										<h3>Dolor nullam</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
-									</li>
-								</ul>
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="generic.html" class="button">Learn More</a></li>
-									</ul>
-								</footer>
-							</section>
+		/* mobile */
+		.mobile-toggle{display:none;background:transparent;border:0;color:var(--text);font-size:20px}
+		.menu-panel{display:flex;gap:16px;align-items:center}
 
-						<!-- Second Section -->
-							<section id="second" class="main special">
-								<header class="major">
-									<h2>Ipsum consequat</h2>
-									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
-								</header>
-								<ul class="statistics">
-									<li class="style1">
-										<span class="icon solid fa-code-branch"></span>
-										<strong>5,120</strong> Etiam
-									</li>
-									<li class="style2">
-										<span class="icon fa-folder-open"></span>
-										<strong>8,192</strong> Magna
-									</li>
-									<li class="style3">
-										<span class="icon solid fa-signal"></span>
-										<strong>2,048</strong> Tempus
-									</li>
-									<li class="style4">
-										<span class="icon solid fa-laptop"></span>
-										<strong>4,096</strong> Aliquam
-									</li>
-									<li class="style5">
-										<span class="icon fa-gem"></span>
-										<strong>1,024</strong> Nullam
-									</li>
-								</ul>
-								<p class="content">Nam elementum nisl et mi a commodo porttitor. Morbi sit amet nisl eu arcu faucibus hendrerit vel a risus. Nam a orci mi, elementum ac arcu sit amet, fermentum pellentesque et purus. Integer maximus varius lorem, sed convallis diam accumsan sed. Etiam porttitor placerat sapien, sed eleifend a enim pulvinar faucibus semper quis ut arcu. Ut non nisl a mollis est efficitur vestibulum. Integer eget purus nec nulla mattis et accumsan ut magna libero. Morbi auctor iaculis porttitor. Sed ut magna ac risus et hendrerit scelerisque. Praesent eleifend lacus in lectus aliquam porta. Cras eu ornare dui curabitur lacinia.</p>
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="generic.html" class="button">Learn More</a></li>
-									</ul>
-								</footer>
-							</section>
+		main{padding-top:92px;padding-bottom:120px}
+		section{padding:56px 0}
+		.hero{display:grid;grid-template-columns:1fr 430px;gap:32px;align-items:center}
+		@media(max-width:900px){.hero{grid-template-columns:1fr;}
+			.nav-links{display:none}
+			.mobile-toggle{display:block}
+			.mobile-menu{display:none;position:fixed;top:68px;right:16px;background:var(--surface);padding:16px;border-radius:12px;backdrop-filter:blur(var(--glass-blur));box-shadow:0 12px 30px rgba(2,6,23,0.6)}
+			.mobile-menu.open{display:block}
+		}
 
-						<!-- Get Started -->
-							<section id="cta" class="main special">
-								<header class="major">
-									<h2>Congue imperdiet</h2>
-									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
-								</header>
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="generic.html" class="button primary">Get Started</a></li>
-										<li><a href="generic.html" class="button">Learn More</a></li>
-									</ul>
-								</footer>
-							</section>
+		/* Cards & glass */
+		.card{background:var(--surface);padding:var(--card-pad);border-radius:var(--radius);box-shadow:0 6px 30px rgba(2,6,23,0.5);backdrop-filter:blur(var(--glass-blur));}
 
-					</div>
+		/* About */
+		.profile{display:flex;gap:24px;align-items:center}
+		.avatar{width:160px;height:160px;border-radius:50%;flex:0 0 160px;overflow:hidden;border:6px solid rgba(255,255,255,0.06);box-shadow:0 12px 24px rgba(2,6,23,0.6)}
+		.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+		.edu{color:var(--muted);font-weight:600;margin:6px 0}
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<h2>Aliquam sed mauris</h2>
-							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
-							<ul class="actions">
-								<li><a href="generic.html" class="button">Learn More</a></li>
-							</ul>
-						</section>
-						<section>
-							<h2>Etiam feugiat</h2>
-							<dl class="alt">
-								<dt>Address</dt>
-								<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
-								<dt>Phone</dt>
-								<dd>(000) 000-0000 x 0000</dd>
-								<dt>Email</dt>
-								<dd><a href="#">information@untitled.tld</a></dd>
-							</dl>
-							<ul class="icons">
-								<li><a href="#" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands fa-dribbble alt"><span class="label">Dribbble</span></a></li>
-							</ul>
-						</section>
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+		/* Skills */
+		.skills{display:grid;grid-template-columns:1fr 340px;gap:20px}
+		@media(max-width:900px){.skills{grid-template-columns:1fr}}
+		.skill-list{display:flex;flex-wrap:wrap;gap:10px}
+		.pill{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:999px;font-weight:600;color:var(--muted);backdrop-filter:blur(6px)}
 
+		.skill-bars{display:flex;flex-direction:column;gap:12px}
+		.skill{display:flex;flex-direction:column;gap:6px}
+		.skill .meta{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+		.bar{height:10px;background:rgba(255,255,255,0.08);border-radius:999px;overflow:hidden}
+		.bar > i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:999px;transition:width 900ms cubic-bezier(.2,.9,.2,1)}
+
+		/* Work */
+		.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+		@media(max-width:800px){.work-grid{grid-template-columns:1fr}}
+		.feature{padding:18px;border-radius:14px;transition:transform .26s ease,box-shadow .26s ease;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
+		.feature:hover{transform:translateY(-8px);box-shadow:0 14px 40px rgba(2,6,23,0.6)}
+		.feature h3{margin:8px 0}
+		.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+		.chip{flex:0 1 auto;min-width:0}
+		.chip{padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,0.06);background:transparent;cursor:pointer}
+		.chip.active{background:var(--primary);color:white;border-color:transparent}
+
+		/* Contact */
+		form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+		form .full{grid-column:1/-1}
+		input,textarea,button{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text)}
+		textarea{min-height:120px;resize:vertical}
+		.btn{background:var(--primary);color:white;border:0;padding:12px;border-radius:10px;font-weight:700;cursor:pointer}
+
+		/* back to top (floating circular button) */
+		.backtop{
+			position:fixed;
+			right:20px;
+			bottom:20px;
+			width:48px;
+			height:48px;
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			border-radius:999px;
+			background:var(--primary);
+			color:white;
+			box-shadow:0 10px 30px rgba(2,6,23,0.55);
+			border:3px solid rgba(255,255,255,0.06);
+			transform:translateY(8px);
+			opacity:0;
+			transition:opacity .25s ease,transform .25s ease;
+			z-index:80;
+		}
+		.backtop.show{opacity:1;transform:translateY(0)}
+		.backtop:focus{outline:3px solid rgba(255,255,255,0.12);outline-offset:3px}
+
+		/* toast */
+		.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:28px;background:var(--surface);color:var(--text);padding:12px 18px;border-radius:10px;display:none;z-index:90}
+		.toast.show{display:block;animation:toast-in .4s ease}
+		@keyframes toast-in{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
+
+		/* footer */
+		footer{padding:30px 0;color:var(--muted);text-align:center}
+
+		/* helpers */
+		.muted{color:var(--muted)}
+		.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+	</style>
+</head>
+<body>
+
+	<header class="site-header" role="banner">
+		<div class="container nav">
+			<div class="brand" aria-hidden="false">
+				<!-- <span class="dot" aria-hidden></span><span>Aphisit</span> -->
 			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<div class="menu-panel">
+				<nav aria-label="เมนูหลัก">
+					<ul class="nav-links" id="navLinks">
+						<li><a href="#about" data-target="about">About</a></li>
+						<li><a href="#work" data-target="work">Work</a></li>
+						<li><a href="#contact" data-target="contact">Contact</a></li>
+					</ul>
+				</nav>
 
-	</body>
+				<button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileMenu" title="เมนู">☰</button>
+
+				<button id="themeToggle" aria-pressed="false" title="Toggle theme" style="margin-left:12px;background:transparent;border:0;color:var(--text);font-weight:700">🌗</button>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<div class="container">
+			<section id="about" aria-labelledby="aboutTitle">
+				<div class="card">
+					<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap">
+						<div style="flex:1;min-width:260px">
+							<h2 id="aboutTitle" style="font-family:'Poppins',sans-serif;">เกี่ยวกับผม <span class="muted">(About)</span></h2>
+							<p class="edu">สำเร็จการศึกษาจาก วิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยสงขลานครินท์</p>
+							<p>สวัสดีครับ ผมเป็น Web/Software Developer ที่สนใจงานระบบสุขภาพและการวิเคราะห์ข้อมูลทางการแพทย์ มีประสบการณ์พัฒนา Web app, Mobile app และระบบหลังบ้าน</p>
+
+							
+						</div>
+
+						<div style="width:360px;min-width:220px">
+							<div class="profile card" style="flex-direction:column;align-items:center;text-align:center">
+								<div class="avatar" aria-hidden="false">
+									<span class="image"><img src="images/img_p.jpg" alt="" /></span>
+									<!-- simple svg placeholder -->
+									<!-- <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><rect width='100%' height='100%' fill='%236C5CE7'/><g fill='%23fff'><circle cx='200' cy='140' r='70'/><rect x='90' y='240' width='220' height='100' rx='24'/></g></svg>" alt="รูปประจำตัว"> -->
+								</div>
+								<h3 style="margin-top:12px">อภิสิทธิ์ </h3>
+								<p class="muted" style="margin:6px 0">Developer</p>
+								<div style="width:100%;margin-top:12px;text-align:left">
+									<strong class="muted">ทักษะ (Skills)</strong>
+									<div class="skill-bars" id="skillBars" style="margin-top:8px">
+										<div class="skill"><div class="meta"><span>SQL</span><span class="muted">Advanced</span></div><div class="bar"><i data-percent="90"></i></div></div>
+										<div class="skill"><div class="meta"><span>.NET Core</span><span class="muted">Advanced</span></div><div class="bar"><i data-percent="90"></i></div></div>
+										<div class="skill"><div class="meta"><span>React.js</span><span class="muted">Advanced</span></div><div class="bar"><i data-percent="80"></i></div></div>
+										<div class="skill"><div class="meta"><span>PHP (Laravel)</span><span class="muted">Expert</span></div><div class="bar"><i data-percent="73"></i></div></div>
+										<div class="skill"><div class="meta"><span>Flutter & .NET MAUI</span><span class="muted">Intermediate</span></div><div class="bar"><i data-percent="68"></i></div></div>
+										<div class="skill"><div class="meta"><span>C/C++</span><span class="muted">Intermediate</span></div><div class="bar"><i data-percent="60"></i></div></div>
+										<div class="skill"><div class="meta"><span>Python</span><span class="muted">Foundational</span></div><div class="bar"><i data-percent="55"></i></div></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="work" aria-labelledby="workTitle">
+				<h2 id="workTitle" style="font-family:'Poppins',sans-serif;">สิ่งที่ทำ / Services</h2>
+				<p class="muted">บริการหลักที่ให้สำหรับลูกค้าและหน่วยงานด้านสุขภาพ</p>
+				<div class="chips-wrap" style="margin-top:14px">
+					<div class="chips" role="tablist" aria-label="ฟิลเตอร์งาน">
+						<button class="chip active" data-filter="all">ทั้งหมด</button>
+						<button class="chip" data-filter="web">Web App</button>
+						<button class="chip" data-filter="health">Healthcare Data</button>
+					</div>
+				</div>
+
+				<div class="work-grid" style="margin-top:16px">
+					<article class="feature card" data-tags="web">
+						<h3>รับ requirement ออกแบบ และพัฒนาเว็บตามความต้องการของ user</h3>
+						<p class="muted">กระบวนการ</p>
+						<ul>
+							<li>เก็บความต้องการ → ออกแบบ UI/UX → ออกแบบสถาปัตยกรรม → พัฒนา/ทดสอบ → ส่งมอบ/ดูแล</li>
+						</ul>
+					</article>
+
+					<article class="feature card" data-tags="health">
+						<h3>วิเคราะห์ Persona คนไข้ จากข้อมูลผล lab และผล x-ray</h3>
+						<p class="muted">ขั้นตอน</p>
+						<ul>
+							<li>data ingestion / cleaning → feature extraction → dashboard / insights (คำนึงถึง PDPA &amp; de-identification)</li>
+						</ul>
+					</article>
+				</div>
+			</section>
+
+			<section id="contact" aria-labelledby="contactTitle">
+				<h2 id="contactTitle" style="font-family:'Poppins',sans-serif;">ติดต่อ</h2>
+				<p class="muted">Email: <a href="mailto:1234@mail.com">1234@mail.com</a></p>
+
+				<div style="margin-top:14px" class="card">
+					<form id="contactForm" novalidate>
+						<label class="sr-only" for="cname">ชื่อ</label>
+						<input id="cname" name="name" placeholder="ชื่อ" required>
+
+						<label class="sr-only" for="cemail">อีเมล</label>
+						<input id="cemail" name="email" type="email" placeholder="อีเมล" required>
+
+						<label class="sr-only" for="cmessage">ข้อความ</label>
+						<textarea id="cmessage" name="message" class="full" placeholder="ข้อความ" required></textarea>
+
+						<div class="full" style="display:flex;gap:10px;justify-content:flex-end">
+							<button type="reset" class="btn" style="background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.06)">ล้าง</button>
+							<button type="submit" class="btn">ส่งข้อความ</button>
+						</div>
+					</form>
+				</div>
+			</section>
+
+		</div>
+	</main>
+
+	<button class="backtop" id="backTop" aria-label="กลับขึ้นบน" title="กลับขึ้นบน">
+		<span aria-hidden="true">⬆</span>
+		<span class="sr-only">กลับขึ้นบน</span>
+	</button>
+	<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+	<footer>
+		<div class="container">
+			<p>© Aphisit — Design & Development</p>
+		</div>
+	</footer>
+
+	<script>
+		(function(){
+			// Elements
+			const navLinks = document.querySelectorAll('.nav-links a');
+			const mobileLinks = document.querySelectorAll('#mobileMenu a');
+			const sections = document.querySelectorAll('main section[id]');
+			const mobileToggle = document.getElementById('mobileToggle');
+			const mobileMenu = document.getElementById('mobileMenu');
+			const chips = document.querySelectorAll('.chip');
+			const workCards = document.querySelectorAll('.work-grid .feature');
+			const contactForm = document.getElementById('contactForm');
+			const toast = document.getElementById('toast');
+			const backTop = document.getElementById('backTop');
+			const themeToggle = document.getElementById('themeToggle');
+
+			// Mobile toggle
+			mobileToggle.addEventListener('click', ()=>{
+				const open = mobileMenu.classList.toggle('open');
+				mobileToggle.setAttribute('aria-expanded', open);
+				mobileMenu.setAttribute('aria-modal', open);
+			});
+
+			// Smooth close mobile menu on link click
+			[...navLinks, ...mobileLinks].forEach(a=>{
+				a.addEventListener('click', (e)=>{
+					const target = a.getAttribute('href');
+					if(window.location.hash !== target) {
+						// allow native scroll-behavior
+					}
+					mobileMenu.classList.remove('open');
+					mobileToggle.setAttribute('aria-expanded','false');
+				});
+			});
+
+			// Scroll-spy using IntersectionObserver
+			const obsOptions = {root:null,rootMargin:'-20% 0px -40% 0px',threshold:0}
+			const spy = new IntersectionObserver((entries)=>{
+				entries.forEach(e=>{
+					if(e.isIntersecting){
+						const id = e.target.id;
+						document.querySelectorAll('.nav-links a, #mobileMenu a').forEach(link=>{
+							link.classList.toggle('active', link.getAttribute('href') === '#'+id);
+						});
+					}
+				});
+			}, obsOptions);
+			sections.forEach(s=>spy.observe(s));
+
+			// Reveal animations & skill bar animation
+			const revealObserver = new IntersectionObserver((entries, o)=>{
+				entries.forEach(en=>{
+					if(en.isIntersecting){
+						en.target.style.transition = 'opacity .6s ease, transform .6s ease';
+						en.target.style.opacity = 1;
+						en.target.style.transform = 'none';
+						// skill bars
+						if(en.target.id === 'about'){
+							document.querySelectorAll('.bar > i').forEach(i=>{
+								const pct = i.dataset.percent || 60;
+								requestAnimationFrame(()=>{ i.style.width = pct + '%'; });
+							});
+						}
+						o.unobserve(en.target);
+					}
+				});
+			},{threshold:0.12});
+
+			// set initial hidden state
+			document.querySelectorAll('main section').forEach(sec=>{
+				sec.style.opacity = 0; sec.style.transform = 'translateY(12px)';
+				revealObserver.observe(sec);
+			});
+
+			// Chips filter
+			chips.forEach(ch=>ch.addEventListener('click', ()=>{
+				chips.forEach(c=>c.classList.remove('active'));
+				ch.classList.add('active');
+				const f = ch.dataset.filter;
+				workCards.forEach(card=>{
+					const tags = card.dataset.tags ? card.dataset.tags.split(',') : [];
+					const show = (f === 'all') || tags.includes(f);
+					card.style.display = show ? '' : 'none';
+				});
+			}));
+
+			// Contact form validation + toast
+			function showToast(msg){
+				toast.textContent = msg; toast.classList.add('show');
+				setTimeout(()=>toast.classList.remove('show'),2500);
+			}
+			contactForm.addEventListener('submit', (e)=>{
+				e.preventDefault();
+				const form = e.target;
+				if(!form.checkValidity()){
+					showToast('กรุณากรอกข้อมูลให้ครบถ้วน');
+					return;
+				}
+				// demo success
+				showToast('ส่งข้อความเรียบร้อย — ขอบคุณครับ');
+				form.reset();
+			});
+
+			// Back to top
+			window.addEventListener('scroll', ()=>{
+				if(window.scrollY > 400) backTop.classList.add('show'); else backTop.classList.remove('show');
+			});
+			backTop.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+			// Theme toggle
+			const preferred = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme:light)').matches ? 'light' : 'dark');
+			document.documentElement.setAttribute('data-theme', preferred);
+			themeToggle.setAttribute('aria-pressed', preferred==='light');
+
+			function toggleTheme(){
+				const cur = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+				const next = cur === 'light' ? 'dark' : 'light';
+				document.documentElement.setAttribute('data-theme', next);
+				localStorage.setItem('theme', next);
+				themeToggle.setAttribute('aria-pressed', next==='light');
+			}
+			themeToggle.addEventListener('click', toggleTheme);
+
+			// keyboard accessibility for mobile menu (close on Esc)
+			document.addEventListener('keydown', (e)=>{
+				if(e.key === 'Escape'){
+					mobileMenu.classList.remove('open');
+					mobileToggle.setAttribute('aria-expanded','false');
+				}
+			});
+
+			// ensure nav links smooth behavior and prevent hash jumps interfering
+			document.querySelectorAll('a[href^="#"]').forEach(a=>{
+				a.addEventListener('click', (ev)=>{
+					ev.preventDefault();
+					const id = a.getAttribute('href').slice(1);
+					const el = document.getElementById(id);
+					if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+				});
+			});
+
+			// focus styles visible
+			document.body.addEventListener('keydown', function(){document.documentElement.classList.add('show-focus');}, {once:true});
+
+		})();
+	</script>
+
+</body>
 </html>
